@@ -1,0 +1,21 @@
+@keyframes animate-stroke {
+    0% { stroke-width: 1px; }
+    50% { stroke-width: 5px ;}
+    100% { stroke-width: 1px ;}
+}
+
+.group {
+
+}
+
+.player {
+    fill: var(--cornflower);
+    animation-name: animate-stroke;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.name {
+    fill: #fff;
+    transform: translate(-16px, 24px);
+}

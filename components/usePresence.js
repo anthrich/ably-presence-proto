@@ -18,10 +18,12 @@ export default function usePresence(channelName, onNewPresence, onPresenceLeft) 
         channel.presence.subscribe('leave', member => {
             onPresenceLeft(member);
         });
+    }
 
+    const joinGame = (name) => {
         var x = Math.floor(Math.random() * 100);
         var y = Math.floor(Math.random() * 100);
-        channel.presence.enter({x,y});
+        channel.presence.enter({x,y,name});
     }
 
     const onUnmount = () => {
@@ -35,5 +37,5 @@ export default function usePresence(channelName, onNewPresence, onPresenceLeft) 
 
     useEffect(useEffectHook, []);
 
-    return [channel, ably];
+    return [joinGame];
 }
